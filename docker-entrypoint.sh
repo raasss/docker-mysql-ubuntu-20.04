@@ -43,10 +43,12 @@ fi
 
 mysql -v -e "CREATE DATABASE IF NOT EXISTS ${MYSQL_DATABASE}"
 mysql -v -e "CREATE USER IF NOT EXISTS ${MYSQL_USER}@'%' IDENTIFIED BY '${MYSQL_PASSWORD}'"
+mysql -v -e "CREATE USER IF NOT EXISTS ${MYSQL_USER}@'localhost' IDENTIFIED BY '${MYSQL_PASSWORD}'"
 mysql -v -e "GRANT ALL PRIVILEGES ON ${MYSQL_DATABASE}.* TO ${MYSQL_USER}@'%'"
+mysql -v -e "GRANT ALL PRIVILEGES ON ${MYSQL_DATABASE}.* TO ${MYSQL_USER}@'localhost'"
 mysql -v -e "FLUSH PRIVILEGES"
 
-# wait for any subprocess to faile and get it's exit code
+# wait for any subprocess to fail and get it's exit code
 
 set +e
 wait -n

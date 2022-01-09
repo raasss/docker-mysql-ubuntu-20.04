@@ -36,6 +36,7 @@ for TESTDIR in $(ls -d test*); do
             RESULTS="${RESULTS}${TESTDIR}/${TESTFILE} ... ${GREEN}PASS${NC}\n"
         else
             echo -e ">>> ${TESTDIR}/${TESTFILE} ... ${RED}FAIL${NC}"
+            RESULTS="${RESULTS}${TESTDIR}/${TESTFILE} ... ${RED}FAIL${NC}\n"
         fi
     done
     # # Clean test environment
