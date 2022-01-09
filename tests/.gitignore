@@ -1,0 +1,3 @@
+**/mysqld.cnf
+**/docker-entrypoint.sh
+**/Dockerfile

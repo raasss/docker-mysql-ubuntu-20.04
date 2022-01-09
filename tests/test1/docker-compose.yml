@@ -5,7 +5,16 @@ networks:
     driver: bridge
 
 services:
-  mysql:
+  mysql-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - private
+    ports:
+      - "3306"
+
+  mysql-client:
     build:
       context: .
       dockerfile: Dockerfile

@@ -21,8 +21,6 @@ RUN set -e; \
     mkdir -v /var/run/mysqld; \
     chown -v -R mysql:mysql /var/run/mysqld
 
-# RUN sed 's/^# pid-file\s*=/pid-file =/' mysqld.cnf
-
 VOLUME [ "/var/lib/mysql" ]
 
 EXPOSE 3306
