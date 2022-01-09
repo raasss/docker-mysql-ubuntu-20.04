@@ -16,6 +16,7 @@ for TESTDIR in $(ls -d test*); do
     cp -f ../../docker-entrypoint.sh .
     cp -f ../../Dockerfile .
 
+    docker-compose pull
     docker-compose build
     docker-compose up -d
     DOCKER_HOST_URL="http://$(docker-compose port mysql-server 3306)"
